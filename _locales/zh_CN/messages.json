@@ -1,0 +1,68 @@
+{
+	"extDesc": {
+		"message": "一键快捷清理浏览器缓存，且在关闭浏览器后自动清理缓存，保护您的隐私安全。"
+	},
+	"autoClean": {
+		"message": "关闭浏览器后自动清理"
+	},
+	"general": {
+		"message": "通用"
+	},
+	"advanced": {
+		"message": "进阶"
+	},
+	"deleteHistory": {
+		"message": "删除浏览记录"
+	},
+	"deleteCache": {
+		"message": "删除缓存"
+	},
+	"deleteDownloads": {
+		"message": "删除下载记录"
+	},
+	"deleteCookies": {
+		"message": "删除Cookies"
+	},
+	"deletePasswords": {
+		"message": "删除保存的密码"
+	},
+	"deleteFormData": {
+		"message": "删除表单数据"
+	},
+	"deleteFileSystems": {
+		"message": "删除文件系统"
+	},
+	"deleteAppCache": {
+		"message": "删除应用程序缓存"
+	},
+	"deleteIndexedDB": {
+		"message": "清空 IndexedDB 数据库"
+	},
+	"deleteLocalStorage": {
+		"message": "清空 Local Storage 数据"
+	},
+	"deleteWebSQL": {
+		"message": "删除 WebSQL 数据库"
+	},
+	"deleteServiceWorkers": {
+		"message": "删除 Service workers"
+	},
+	"removeCookieDomin": {
+		"message": "删除的 Cookies"
+	},
+	"BypassCookieDomin": {
+		"message": "保留的 Cookies"
+	},
+	"cleanCache": {
+		"message": "清理缓存"
+	},
+	"cleaningCache": {
+		"message": "清理中"
+	},
+	"cleanCacheFinish": {
+		"message": "完成🎉"
+	},
+	"moreSettings": {
+		"message": "更多设置"
+	}
+}

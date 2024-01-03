@@ -1,0 +1,68 @@
+{
+	"extDesc": {
+		"message": "One-click quick clearing of browser cache, and automatic cache cleanup after closing the browser to protect your privacy and security."
+	},
+	"autoClean": {
+		"message": "Automatically clean up after closing the browser"
+	},
+	"general": {
+		"message": "General"
+	},
+	"advanced": {
+		"message": "Advanced"
+	},
+	"deleteHistory": {
+		"message": "Delete browsing history"
+	},
+	"deleteCache": {
+		"message": "Delete cache"
+	},
+	"deleteDownloads": {
+		"message": "Delete download history"
+	},
+	"deleteCookies": {
+		"message": "Delete cookies"
+	},
+	"deletePasswords": {
+		"message": "Delete saved passwords"
+	},
+	"deleteFormData": {
+		"message": "Delete form data"
+	},
+	"deleteFileSystems": {
+		"message": "Delete file systems"
+	},
+	"deleteAppCache": {
+		"message": "Delete application cache"
+	},
+	"deleteIndexedDB": {
+		"message": "Clear IndexedDB database"
+	},
+	"deleteLocalStorage": {
+		"message": "Clear Local Storage data"
+	},
+	"deleteWebSQL": {
+		"message": "Delete WebSQL database"
+	},
+	"deleteServiceWorkers": {
+		"message": "Delete Service workers"
+	},
+	"removeCookieDomin": {
+		"message": "Deleted Cookies"
+	},
+	"BypassCookieDomin": {
+		"message": "Reserved Cookies"
+	},
+	"cleanCache": {
+		"message": "Clear"
+	},
+	"cleaningCache": {
+		"message": "Cleaning"
+	},
+	"cleanCacheFinish": {
+		"message": "Done🎉"
+	},
+	"moreSettings": {
+		"message": "Setting"
+	}
+}

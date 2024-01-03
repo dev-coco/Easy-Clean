@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Settings</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/settings.css" rel="stylesheet">
+</head>
+<body class="container">
+  <h1>Easy Clean</h1>
+  <div class="justify-content mb-3">
+    <input class="form-check-input" type="checkbox" id="autoClean">
+    <label for="autoClean"></label>
+  </div>
+  <div class="justify-content">
+    <table class="table mb-3" style="width: 800px;">
+      <tbody>
+        <tr>
+          <td class="bg-primary text-white bg-gradient text-center" colspan="2" rowspan="1" for="general"></td>
+        </tr>
+        <tr>
+          <td>
+            <input class="form-check-input" type="checkbox" id="deleteHistory">
+            <label for="deleteHistory"></label>
+          </td>
+          <td>
+            <input class="form-check-input" type="checkbox" id="deleteCache">
+            <label for="deleteCache"></label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input class="form-check-input" type="checkbox" id="deleteDownloads">
+            <label for="deleteDownloads"></label>
+          </td>
+          <td>
+            <input class="form-check-input" type="checkbox" id="deleteCookies">
+            <label for="deleteCookies"></label>
+          </td>
+        </tr>
+        <tr>
+          <td class="bg-primary text-white bg-gradient text-center" colspan="2" rowspan="1" for="advanced"></td>
+        </tr>
+        <tr>
+          <td>
+            <input class="form-check-input" type="checkbox" id="deletePasswords">
+            <label for="deletePasswords"></label>
+          </td>
+          <td>
+            <input class="form-check-input" type="checkbox" id="deleteFormData">
+            <label for="deleteFormData"></label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input class="form-check-input" type="checkbox" id="deleteFileSystems">
+            <label for="deleteFileSystems"></label>
+          </td>
+          <td>
+            <input class="form-check-input" type="checkbox" id="deleteAppCache">
+            <label for="deleteAppCache"></label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input class="form-check-input" type="checkbox" id="deleteIndexedDB">
+            <label for="deleteIndexedDB"></label>
+          </td>
+          <td>
+            <input class="form-check-input" type="checkbox" id="deleteLocalStorage">
+            <label for="deleteLocalStorage"></label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input class="form-check-input" type="checkbox" id="deleteWebSQL">
+            <label for="deleteWebSQL"></label>
+          </td>
+          <td>
+            <input class="form-check-input" type="checkbox" id="deleteServiceWorkers">
+            <label for="deleteServiceWorkers"></label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="justify-content">
+    <div class="box row">
+      <div class="text-bg-danger bg-gradient pl-3 pt-1 pb-1">
+        <input class="form-check-input check-all-left" type="checkbox" id="removeCookieDomin" data-domain="">
+        <label for="removeCookieDomin"></label>
+      </div>
+      <div class="remove-cookie-list pl-3"></div>
+    </div>
+    <div class="toolbar">
+      <button class="btn btn-success" id="toBypassCookie">
+        <svg height="25" width="25" viewBox="0 0 512 512">
+          <path
+            d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6S320 110.5 320 120v72H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32h288v72c0 9.6 5.7 18.2 14.5 22z" />
+        </svg>
+      </button>
+      <br>
+      <button class="btn btn-danger" id="toRemoveCookie">
+        <svg height="25" width="25" viewBox="0 0 512 512">
+          <path
+            d="M177.5 414c-8.8 3.8-19 2-26-4.6l-144-136C2.7 268.9 0 262.6 0 256s2.7-12.9 7.5-17.4l144-136c7-6.6 17.2-8.4 26-4.6s14.5 12.5 14.5 22v72h288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H192v72c0 9.6-5.7 18.2-14.5 22z" />
+        </svg>
+      </button>
+    </div>
+    <div class="box row">
+      <div class="text-bg-success bg-gradient pl-3 pt-1 pb-1">
+        <input class="form-check-input check-all-right" data-domain="" id="BypassCookieDomin" type="checkbox">
+        <label for="BypassCookieDomin"></label>
+      </div>
+      <div class="bypass-cookie-list pl-3"></div>
+    </div>
+  </div>
+  <script src="/js/settings.js"></script>
+</body>
+</html>
