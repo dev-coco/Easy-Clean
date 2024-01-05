@@ -72,7 +72,6 @@ async function init () {
   // 获取字符元素，写入对应语言的字符
   const elements = document.querySelectorAll('[for]')
   for (const el of elements) {
-    console.log(el.getAttribute('for'))
     el.innerText = json[el.getAttribute('for')].message
   }
   const settingsList = ['deleteHistory', 'deleteCache', 'deleteDownloads', 'deleteCookies', 'deletePasswords', 'deleteFormData', 'deleteFileSystems', 'deleteAppCache', 'deleteIndexedDB', 'deleteLocalStorage', 'deleteWebSQL', 'deleteServiceWorkers', 'autoClean']

@@ -15,7 +15,6 @@ async function init () {
   } catch {
     json = await fetch('/_locales/en/messages.json').then(response => response.json())
   }
-  console.log(json)
   const elements = document.querySelectorAll('[for]')
   for (const el of elements) {
     el.innerText = json[el.getAttribute('for')].message
