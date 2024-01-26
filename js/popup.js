@@ -62,7 +62,8 @@ cleanCache.addEventListener('click', async () => {
     const bypassList = await new Promise(resolve => chrome.storage.local.get('bypassList', result => resolve(result.bypassList))) || defaultBypassList
     await chrome.browsingData.remove({
       since: 0,
-      excludeOrigins: bypassList.map(x => 'https://*.' + x)
+      excludeOrigins: bypassList.map(x => 'https://' + x)
+      // excludeOrigins: bypassList.map(x => 'https://*.' + x)
     }, { cookies: true })
   }
   chrome.browsingData.remove(options, removeOptions, () => {
