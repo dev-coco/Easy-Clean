@@ -8,11 +8,13 @@ One-click quick cleanup of browser cache, with automatic cache clearance upon cl
 - 自定义清理项目
 - 域名白名单（排除指定域名不清理 Cookies）
 - 关闭浏览器后自动清理
+- 一键关闭浏览器分页
 
 ## Features
 - One-click cache clearance
 - Customizable cleanup items
 - Domain whitelist (exclude specified domains from clearing cookies)
 - Automatic cleanup upon closing the browser
+- Close browser tabs with one click
 
   
