@@ -76,10 +76,18 @@ async function init () {
   }
   const settingsList = ['deleteHistory', 'deleteCache', 'deleteDownloads', 'deleteCookies', 'deletePasswords', 'deleteFormData', 'deleteFileSystems', 'deleteAppCache', 'deleteIndexedDB', 'deleteLocalStorage', 'deleteWebSQL', 'deleteServiceWorkers', 'autoClean']
   // 默认全部启用
-  chrome.storage.local.get(settingsList, (data) => {
+  chrome.storage.local.get(settingsList, data => {
     for (let i = 0; i < settingsList.length; i++) {
       const param = data[settingsList[i]]
       document.getElementById(settingsList[i]).checked = (void 0 === param || param || !1)
+    }
+  })
+  chrome.storage.local.get('tabSetting', data => {
+    try {
+      document.getElementById(data.tabSetting).checked = true
+    } catch {
+      // 默认设置
+      document.getElementById('newTab').checked = true
     }
   })
   updateCookiesDomin()
@@ -95,18 +103,28 @@ async function updateCookiesDomin () {
   for (let i = 0; i < bypassList.length; i++) {
     bypassHtml += `<div class="mt-1 mb-2"><input class="form-check-input bypass-cookie" type="checkbox" id="bypass${i + 1}" data-domain="${bypassList[i]}"><label for="bypass${i + 1}">${bypassList[i]}</label></div>`
   }
-  for (let i = 0; i < removeList.length; i++) {
-    removeHtml += `<div class="mt-1 mb-2"><input class="form-check-input remove-cookie" type="checkbox" id="remove${i + 1}" data-domain="${removeList[i]}"><label for="remove${i + 1}">${removeList[i]}</label></div>`
+  const filteredRemoveList = removeList.filter(deletedDomain => !bypassList.some(reservedDomain => deletedDomain.includes(reservedDomain)))
+  for (let i = 0; i < filteredRemoveList.length; i++) {
+    removeHtml += `<div class="mt-1 mb-2"><input class="form-check-input remove-cookie" type="checkbox" id="remove${i + 1}" data-domain="${filteredRemoveList[i]}"><label for="remove${i + 1}">${filteredRemoveList[i]}</label></div>`
   }
   removeCookieList.innerHTML = removeHtml
   bypassCookieList.innerHTML = bypassHtml
 }
 
 // 监听设置变化
-const inputList = document.querySelectorAll('input:not([data-domain])')
+const inputList = document.querySelectorAll('input:not([data-domain]):not([data-tab])')
 inputList.forEach(input => {
   input.addEventListener('change', event => {
     // 储存设置
+    console.log('event.target.id', event.target.id)
+    console.log('event.target.checked', event.target.checked)
     chrome.storage.local.set({ [event.target.id]: event.target.checked })
+  })
+})
+
+// 监听 Tab 设置
+;['newTab', 'currentTab', 'allTabs'].forEach(el => {
+  document.getElementById(el).addEventListener('click', event => {
+    chrome.storage.local.set({ tabSetting: el })
   })
 })

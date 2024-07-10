@@ -1,6 +1,7 @@
 const cleanCache = document.getElementById('cleanCache')
 const settings = document.getElementById('settings')
 const status = document.getElementById('status')
+const closeTab = document.getElementById('closeTab')
 
 // 打开设置界面
 settings.addEventListener('click', () => {
@@ -62,8 +63,8 @@ cleanCache.addEventListener('click', async () => {
     const bypassList = await new Promise(resolve => chrome.storage.local.get('bypassList', result => resolve(result.bypassList))) || defaultBypassList
     await chrome.browsingData.remove({
       since: 0,
-      excludeOrigins: bypassList.map(x => 'https://' + x)
       // excludeOrigins: bypassList.map(x => 'https://*.' + x)
+      excludeOrigins: bypassList.map(x => 'https://' + x)
     }, { cookies: true })
   }
   chrome.browsingData.remove(options, removeOptions, () => {
@@ -73,4 +74,30 @@ cleanCache.addEventListener('click', async () => {
       process = false
     }, 2000)
   })
+})
+
+closeTab.addEventListener('click', async () => {
+  const tabSetting = await new Promise(resolve => chrome.storage.local.get('tabSetting', data => resolve(data.tabSetting))) || 'newTab'
+  function closeTabs (tabID) {
+    chrome.tabs.query({}, tabs => {
+      tabs.forEach(tab => {
+        if (tab.id !== tabID) chrome.tabs.remove(tab.id)
+      })
+    })
+  }
+  switch (tabSetting) {
+    case 'newTab':
+      // 关闭所有标签，新建分页
+      closeTabs('all')
+      chrome.tabs.create({})
+      break
+    case 'currentTab':
+      // 关闭除了当前分页的所有页面
+      chrome.tabs.query({ active: true, currentWindow: true }, thisTab => closeTabs(thisTab[0].id))
+      break
+    case 'allTabs':
+      // 关闭所有分页
+      closeTabs('all')
+      break
+  }
 })
