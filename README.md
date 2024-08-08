@@ -10,6 +10,8 @@ One-click quick cleanup of browser cache, with automatic cache clearance upon cl
 - 关闭浏览器后自动清理
 - 一键关闭浏览器分页
 
+[使用教程](https://dev-coco.github.io/post/Easy-Clean/)
+
 ## Features
 - One-click cache clearance
 - Customizable cleanup items
@@ -17,4 +19,4 @@ One-click quick cleanup of browser cache, with automatic cache clearance upon cl
 - Automatic cleanup upon closing the browser
 - Close browser tabs with one click
 
-  
+[Tutorial](https://dev-coco.github.io/post/Easy-Clean-EN/)
